@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <span class="nav__logo-circle">P</span>
+                <span class="nav__logo-name">Povketya NHOR</span>
+            </a>
+    
+            <div class="nav__menu" id="nav-menu">
+                <span class="nav__title">Menu</span>
+        
+                <h3 class="nav__name">Name</h3>
+        
+                <ul class="nav__list">
+                            
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About Me</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#education" class="nav__link">Education</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#projects" class="nav__link">Projects</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#training" class="nav__link">Training</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills-summary" class="nav__link">Skills</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#expertise" class="nav__link">Expertise</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#language" class="nav__link">Language</a>
+                    </li>
+                    
+        
+                    <!-- <li class="nav__item">
+                        <a href="#contact" class="nav__link nav__link-button">Contact Me</a>
+                    </li> -->
+                </ul>
+        
+                <!-- Close button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+    
+            <div class="nav__buttons">
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-4-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+
+        <!--==================== ABOUT ME ====================-->
+        <section class="about container" id="about">
+            <h2 class="section__title">About Me</h2>
+            <div class="about__header">
+                <h3 class="about__header-title">Get to Know Me</h3>
+            </div>
+            <div class="about__content">
+                <div class="about__image">
+                    <img src="img/profile.jpg" alt="About Me Image">
+                </div>
+                
+                <div class="about__text">
+                    <p>
+                        Hello! I'm a data analyst with a passion for deriving insights from data and solving complex problems.
+                    </p>
+                    <p>
+                        3rd-year Data Science student with skills in data analysis, machine learning, and web development. Passionate about solving real-world problems and driving impactful solutions.
+                    </p>
+                    <div class="contact-info">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><i class="bi bi-telephone"></i> 088 479 5250</li>
+                            <li><i class="bi bi-envelope"></i> povketya09@gmail.com</li>
+                            <li><i class="bi bi-geo-alt"></i> Teuk Tla, Sen Sok, Phnom Penh, Cambodia</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+
+        <!--==================== EDUCATION ====================-->
+        <section class="section education container" id="education">
+            <h2 class="section__title">Education</h2>
+            <div class="section__content">
+                <!-- <div class="section__item">
+                    <div class="education__header">
+                        <h3 class="section__title">High School Diploma in Science</h3>
+                        <span class="section__subtitle">XYZ High School (2019-2023)</span>
+                    </div>
+                    <p class="section__description">Graduated with honors, specializing in advanced mathematics and computer science.</p>
+                </div> -->
+                <div class="section__item">
+                    <div class="education__header">
+                        <h3 class="educate">INTERNATIONAL BACHELOR'S IN DATA SCIENCE AND ENGINEERING</h3>
+                        <span class="section__subtitle">Royal University of Phnom Penh (2023-2027)</span>
+                    </div>
+                    <p class="section__description">Pursuing an international degree with a focus on data science, engineering, and AI technologies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== EXPERIENCE ====================-->
+        <section id="projects" class="projects-section">
+            <h2 class="section__title">Project</h2>
+            <div id="project1" class="project-slide active">
+                <div class="project-info">
+                    <h2>01</h2>
+                    <h3>Loan Management System</h3>
+                    <p>Developed a loan management system with a calculator and ML-based suggestion for the best loan.</p>
+                    <p>Team member: Phork Norak, Rop Borom and Tan Chesthareah.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Povketya/project1" target="_blank"> 
+                            <i class="fa fa-github"></i>
+                        </a>
+                        <!-- <a href="project1.html" target="_blank"> -->
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="img\loan.png" alt="Loan Management System">
+                </div>
+            </div>
+        
+            <div id="project2" class="project-slide">
+                <div class="project-info">
+                    <h2>02</h2>
+                    <h3>Face Recognition</h3>
+                    <p>Created a system with facial recognition for secure patient information access.</p>
+                    <p>Supervisor : Professor Khim Chamroeun (Vice-Dean of FE-RUPP)</p>
+                    <p>Team member: Phork Norak, Rop Borom and Tan Chesthareah.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Povketya/project2" target="_blank"> 
+                            <i class="fa fa-github"></i>
+                        </a>
+                        <!-- <a href="project2.html" target="_blank"> -->
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="img\face.png" alt="Face Recognition">
+                </div>
+            </div>
+        
+            <div id="project3" class="project-slide">
+                <div class="project-info">
+                    <h2>03</h2>
+                    <h3>Multi-Vendor eCommerce Website</h3>
+                    <p>Developed an e-commerce platform enabling multiple vendors to list and sell products.</p>
+                    <p>Team member: Phork Norak and Ly Hor.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Povketya/project3" target="_blank"> 
+                            <i class="fa fa-github"></i>
+                        </a>
+                        <!-- <a href="project3.html" target="_blank"> -->
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="img\ecomus.png" alt="Multi-Vendor eCommerce Website">
+                </div>
+            </div>
+        
+            <div id="project4" class="project-slide">
+                <div class="project-info">
+                    <h2>04</h2>
+                    <h3>Financial Dashboard Development</h3>
+                    <p>Built a dashboard to visualize profit margins, revenue, loans, and customer metrics.</p>
+                    <p>Team member: Phork Norak, Rop Borom and Tan Chesthareah.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Povketya/project4" target="_blank"> 
+                            <i class="fa fa-github"></i>
+                        </a>
+                        <!-- <a href="project4.html" target="_blank"> -->
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="img\daskboard.png" alt="Financial Dashboard Development">
+                </div>
+            </div>
+        
+            <div class="project-navigation">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </section>
+        
+
+
+        <!--==================== TRAINING ====================-->
+
+        <section class="section training container" id="training">
+            <h2 class="section__title">Training Summary</h2>
+            <div class="section__content">
+                <div class="section__item">
+                    <div class="training__header">
+                        <h3 class="education">ASEAN Data Science Explorers 2024 Enablement Session. SAP Analytics Cloud and SAP Build Apps training session
+                        </h3>
+                        <span class="section__subtitle">Certified by ASEAN Data Science Explorers 2024</span>
+                    </div>
+                    <!-- <p class="section__description">
+                        Completed a data science training program certified by the Korean Ministry of Education.
+                    </p> -->
+                </div>
+                <div class="section__item">
+                    <div class="training__header">
+                        <h3 class="education">Python for Beginners </h3>
+                        <span class="section__subtitle">Certified by Simplilearn</span>
+                    </div>
+                    <p class="section__description">
+                        Gained hands-on experience in python for beginners , certified by Simplilearn.
+                    </p>
+                </div>
+                <div class="section__item">
+                    <div class="training__header">
+                        <h3 class="education">Introduction to SQL</h3>
+                        <span class="section__subtitle">Certified by Simplilearn</span>
+                    </div>
+                    <p class="section__description">
+                        Completed Introduction to SQL by Simplilearn, further enhancing skills in data science and related fields.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Summary Section -->
+                
+        <section id="skills-summary" class="skills-summary section light-background">
+            <h2 class="section__title">Skills</h2>
+            <div class="container">
+              <div class="row gy-4">
+                <!-- Skill 1: Data Analysis -->
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+                  <div class="skill-item position-relative">
+                    <div class="circular-progress" data-progress="85">
+                      <span class="skill__value"><i class="bi bi-bar-chart-line icon"></i><br>85%</span>
+                    </div>
+                    <h4><a href="#" class="stretched-link">Data Analysis</a></h4>
+                    <p>Expertise in analyzing complex datasets to derive meaningful insights.</p>
+                  </div>
+                </div>
+          
+                <!-- Skill 2: Data Engineer -->
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+                  <div class="skill-item position-relative">
+                    <div class="circular-progress" data-progress="80">
+                      <span class="skill__value"><i class="bi bi-gear-wide-connected icon"></i><br>70%</span>
+                    </div>
+                    <h4><a href="#" class="stretched-link">Data Engineer</a></h4>
+                    <p>Skilled in creating and managing data systems to collect, process, and store data efficiently.</p>
+                  </div>
+                </div>
+
+                <!-- Skill 3: Database Fundamental -->
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-item position-relative">
+                      <div class="circular-progress" data-progress="60">
+                        <span class="skill__value"><i class="bi bi-code-slash icon"></i><br>90%</span>
+                      </div>
+                      <h4><a href="#" class="stretched-link">Database Fundamental </a></h4>
+                      <p>Strong understanding of how databases work and how to manage them.</p>
+                    </div>
+                  </div>
+          
+                <!-- Skill 4: Web Development -->
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+                  <div class="skill-item position-relative">
+                    <div class="circular-progress" data-progress="60">
+                      <span class="skill__value"><i class="bi bi-code-slash icon"></i><br>60%</span>
+                    </div>
+                    <h4><a href="#" class="stretched-link">Web Development</a></h4>
+                    <p>Proficient in building responsive and user-friendly web applications.</p>
+                  </div>
+                </div>
+          
+                <!-- Skill 5: Computer Vision -->
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+                  <div class="skill-item position-relative">
+                    <div class="circular-progress" data-progress="80">
+                      <span class="skill__value"><i class="bi bi-eye icon"></i><br>60%</span>
+                    </div>
+                    <h4><a href="#" class="stretched-link">Computer Vision</a></h4>
+                    <p>Experienced in implementing computer vision techniques and applications.</p>
+                  </div>
+                </div>
+          
+                <!-- Skill 6: AI -->
+            
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="500">
+                    <div class="skill-item position-relative">
+                      <div class="circular-progress" data-progress="75">
+                        <span class="skill__value"><i class="bi bi-cpu icon"></i><br>60%</span>
+                      </div>
+                      <h4><a href="#" class="stretched-link">AI</a></h4>
+                      <p>Experience in AI techniques, including deep learning and NLP.</p>
+                    </div>
+                </div>
+          
+                <!-- Skill 7: Problem Solving -->
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="600">
+                  <div class="skill-item position-relative">
+                    <div class="circular-progress" data-progress="85">
+                      <span class="skill__value"><i class="bi bi-chat-square-text icon"></i><br>85%</span>
+                    </div>
+                    <h4><a href="#" class="stretched-link">Problem Solving</a></h4>
+                    <p>Good at finding simple and effective solutions to tough problems.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Expertise Section -->
+        <section id="expertise" class="expertise section">
+            <!-- <h2 class="section__title">Expertise</h2> -->
+            <div class="container">
+              <div class="expertise-header">
+                <!-- <i class="bi bi-gear icon"></i> -->
+                <h2 class="section__title">Expertise</h2>
+              </div>
+              <ul class="expertise-list">
+                <li><strong>Data Analysis:</strong> Excel, SQL, Jupyter Notebooks, Python (Pandas, NumPy, Matplotlib)</li>
+                <!-- <li><strong>Machine Learning:</strong> Scikit-learn, TensorFlow</li> -->
+                <li><strong>Computer Vision:</strong> OpenCV, dlib</li>
+                <li><strong>Web Development:</strong> Django, React.js, HTML/CSS, JavaScript</li>
+              </ul>
+            </div>
+        </section>
+
+        <section id="language" class="language section">
+            <div class="container">
+                <div class="language-header">
+                    <!-- <i class="bi bi-translate icon"></i> -->
+                    <h2 class="section__title">Language</h2>
+                </div>
+                <ul class="language-list">
+                    <li></i><strong> Khmer:</strong> Native</li>
+                    <li></i><strong> English:</strong> Intermediate</li>
+                    <li></i><strong> Programming Languages:</strong> Python, C++,SQL and JavaScript</li>
+                </ul>
+            </div>
+        </section>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-about">
+                    <p>`Passionate person who uses new AI technology to find smart solutions for problems and achieve a big goals.</p>
+                </div>
+                <div class="social-links">
+                    <h4>Connect with me</h4>
+                    <a href="https://web.facebook.com/zaa.yaa.091218/" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/povketya_0512/" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a href="https://x.com/ketyalz_09" target="_blank"><i class="bi bi-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/nhor-povketya-532870310/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://t.me/KetyaNhor" target="_blank"><i class="bi bi-telegram"></i></a>
+                    <a href="https://github.com/Povketya" target="_blank"><i class="bi bi-github"></i></a>
+                </div>
+                
+
+                <div class="footer-blog">
+                    <h4>Latest Updates</h4>
+                    <ul>
+                        <li><a href="#">Building a Scalable Web Application with React and Django</a></li>
+                        <li><a href="#">My Journey into Data Science</a></li>
+                        <li><a href="#">Exploring AI and Machine Learning</a></li>
+                    </ul>
+                </div>
+            
+            </div>
+        </footer>
+
+        
+    </main>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // Animation duration
+        easing: 'ease-in-out', // Animation easing
+        once: true // Whether animation should happen only once or every time you scroll up/down
+      });
+    </script>
+</body>
+</html>
