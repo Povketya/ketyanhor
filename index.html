@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Portfolio</title>
+    <title>Nhor Povketya | Data Science & Analytics Portfolio</title>
+    <meta name="description" content="Data Science and Data Analysis portfolio of Nhor Povketya - 4th year student specializing in data engineering, machine learning, and visualization">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <!--==================== HEADER ====================-->
@@ -27,33 +26,36 @@
                 <h3 class="nav__name">Name</h3>
         
                 <ul class="nav__list">
-                            
                     <li class="nav__item">
-                        <a href="#about" class="nav__link">About Me</a>
+                        <a href="#home" class="nav__link">Home</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#education" class="nav__link">Education</a>
+                        <a href="#about" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#experience" class="nav__link">Experience</a>
                     </li>
                     <li class="nav__item">
                         <a href="#projects" class="nav__link">Projects</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#training" class="nav__link">Training</a>
+                        <a href="#skills" class="nav__link">Skills</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#skills-summary" class="nav__link">Skills</a>
+                        <a href="#hard-skills" class="nav__link">Hard Skills</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#expertise" class="nav__link">Expertise</a>
+                        <a href="#soft-skills" class="nav__link">Soft Skills</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#language" class="nav__link">Language</a>
+                        <a href="#languages" class="nav__link">Languages</a>
                     </li>
-                    
-        
-                    <!-- <li class="nav__item">
-                        <a href="#contact" class="nav__link nav__link-button">Contact Me</a>
-                    </li> -->
+                    <li class="nav__item">
+                        <a href="#references" class="nav__link">References</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">Contact</a>
+                    </li>
                 </ul>
         
                 <!-- Close button -->
@@ -74,60 +76,406 @@
     <!--==================== MAIN ====================-->
     <main class="main">
 
+        <!--==================== HERO ====================-->
+        <section class="hero" id="home">
+            <div class="hero__container container">
+                <div class="hero__content" data-aos="fade-right">
+                    <div class="hero__badge">
+                        <i class="bi bi-mortarboard"></i>
+                        <span>Final Year Student</span>
+                    </div>
+                    <h1 class="hero__title">
+                        Hi, I'm <span class="highlight">Nhor Povketya</span>
+                    </h1>
+                    <div class="hero__roles">
+                        <span class="role-item">Data Scientist</span>
+                        <span class="role-divider">•</span>
+                        <span class="role-item">Data Engineer</span>
+                        <span class="role-divider">•</span>
+                        <span class="role-item">ML Enthusiast</span>
+                    </div>
+                    <p class="hero__description">
+                        Final year Data Science student at Royal University of Phnom Penh, specializing in
+                        data engineering, machine learning, and transforming complex datasets into actionable insights.
+                        Passionate about leveraging AI and analytics to solve real-world problems.
+                    </p>
+
+                    <div class="hero__stats-grid">
+                        <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="stat-icon">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat__number" data-target="7">0</h3>
+                                <p class="stat__label">Projects</p>
+                            </div>
+                        </div>
+                        <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="stat-icon">
+                                <i class="bi bi-trophy"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat__number" data-target="2">0</h3>
+                                <p class="stat__label">Awards</p>
+                            </div>
+                        </div>
+                        <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="stat-icon">
+                                <i class="bi bi-patch-check"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat__number" data-target="6">0</h3>
+                                <p class="stat__label">Certifications</p>
+                            </div>
+                        </div>
+                        <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="stat-icon">
+                                <i class="bi bi-building"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat__number" data-target="3">0</h3>
+                                <p class="stat__label">Experiences</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero__buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="bi bi-folder"></i>
+                            <span>View Projects</span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="bi bi-envelope"></i>
+                            <span>Get in Touch</span>
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="bi bi-download"></i>
+                            <span>Download CV</span>
+                        </a>
+                    </div>
+
+                    <div class="hero__social">
+                        <a href="https://github.com/Povketya" target="_blank" class="social-link" data-aos="fade-up" data-aos-delay="100">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nhor-povketya-532870310/" target="_blank" class="social-link" data-aos="fade-up" data-aos-delay="200">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="mailto:povketya09@gmail.com" class="social-link" data-aos="fade-up" data-aos-delay="300">
+                            <i class="bi bi-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero__visual" data-aos="fade-left">
+                    <div class="hero__image-wrapper">
+                        <div class="floating-card card-1" data-aos="fade-down" data-aos-delay="500">
+                            <i class="bi bi-graph-up"></i>
+                            <span>Data Analysis</span>
+                        </div>
+                        <div class="floating-card card-2" data-aos="fade-up" data-aos-delay="600">
+                            <i class="bi bi-cpu"></i>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="floating-card card-3" data-aos="fade-left" data-aos-delay="700">
+                            <i class="bi bi-database"></i>
+                            <span>Big Data</span>
+                        </div>
+                        <div class="floating-card card-4" data-aos="fade-right" data-aos-delay="800">
+                            <i class="bi bi-bar-chart"></i>
+                            <span>Visualization</span>
+                        </div>
+                        <div class="hero__main-visual">
+                            <div class="data-orbit orbit-1"></div>
+                            <div class="data-orbit orbit-2"></div>
+                            <div class="data-orbit orbit-3"></div>
+                            <div class="central-icon">
+                                <i class="bi bi-person-workspace"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <i class="ri-arrow-down-line"></i>
+            </div>
+        </section>
+
         <!--==================== ABOUT ME ====================-->
-        <section class="about container" id="about">
-            <h2 class="section__title">About Me</h2>
-            <div class="about__header">
-                <h3 class="about__header-title">Get to Know Me</h3>
-            </div>
-            <div class="about__content">
-                <div class="about__image">
-                    <img src="img/profile.jpg" alt="About Me Image">
-                </div>
-                
-                <div class="about__text">
-                    <p>
-                        Hello! I'm a data analyst with a passion for deriving insights from data and solving complex problems.
-                    </p>
-                    <p>
-                        3rd-year Data Science student with skills in data analysis, machine learning, and web development. Passionate about solving real-world problems and driving impactful solutions.
-                    </p>
-                    <div class="contact-info">
-                        <h4>Contact</h4>
-                        <ul>
-                            <li><i class="bi bi-telephone"></i> 088 479 5250</li>
-                            <li><i class="bi bi-envelope"></i> povketya09@gmail.com</li>
-                            <li><i class="bi bi-geo-alt"></i> Teuk Tla, Sen Sok, Phnom Penh, Cambodia</li>
-                        </ul>
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">About Me</h2>
+                <div class="about__content">
+                    <div class="about__image" data-aos="fade-right">
+                        <img src="img/profile.jpg" alt="Nhor Povketya - Data Science Student">
+                        <div class="about__badge">
+                            <i class="ri-graduation-cap-line"></i>
+                            <span>4th Year</span>
+                        </div>
                     </div>
-                    
+
+                    <div class="about__text" data-aos="fade-left">
+                        <h3 class="about__subtitle">Data Analyst & Future Data Engineer</h3>
+                        <p>
+                            I'm a passionate Data Analyst and 4th-year Data Science student at the Royal University of Phnom Penh,
+                            dedicated to transforming raw data into meaningful insights that drive decision-making.
+                        </p>
+                        <p>
+                            With expertise in data collection, cleaning, visualization, and reporting using Excel, Power BI, Python,
+                            and SQL, I've built comprehensive dashboards, analyzed business trends, and supported data-driven
+                            decisions across departments.
+                        </p>
+                        <div class="about__highlights">
+                            <div class="highlight-item">
+                                <i class="bi bi-award"></i>
+                                <div>
+                                    <h4>1st Award Winner</h4>
+                                    <p>7th Engineering Day Awards 2024</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="bi bi-briefcase"></i>
+                                <div>
+                                    <h4>Data Engineer</h4>
+                                    <p>COPAI AI Innovation Lab</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="bi bi-book"></i>
+                                <div>
+                                    <h4>Teaching Assistant</h4>
+                                    <p>SQL & Python Courses</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about__contact">
+                            <a href="mailto:povketya09@gmail.com" class="contact-item">
+                                <i class="bi bi-envelope"></i>
+                                povketya09@gmail.com
+                            </a>
+                            <a href="tel:+85588479250" class="contact-item">
+                                <i class="bi bi-telephone"></i>
+                                +855 88 47 95 250
+                            </a>
+                            <span class="contact-item">
+                                <i class="bi bi-geo-alt"></i>
+                                Phnom Penh, Cambodia
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-
-        <!--==================== EDUCATION ====================-->
-        <section class="section education container" id="education">
-            <h2 class="section__title">Education</h2>
-            <div class="section__content">
-                <!-- <div class="section__item">
-                    <div class="education__header">
-                        <h3 class="section__title">High School Diploma in Science</h3>
-                        <span class="section__subtitle">XYZ High School (2019-2023)</span>
-                    </div>
-                    <p class="section__description">Graduated with honors, specializing in advanced mathematics and computer science.</p>
-                </div> -->
-                <div class="section__item">
-                    <div class="education__header">
-                        <h3 class="educate">INTERNATIONAL BACHELOR'S IN DATA SCIENCE AND ENGINEERING</h3>
-                        <span class="section__subtitle">Royal University of Phnom Penh (2023-2027)</span>
-                    </div>
-                    <p class="section__description">Pursuing an international degree with a focus on data science, engineering, and AI technologies.</p>
-                </div>
-            </div>
-        </section>
 
         <!--==================== EXPERIENCE ====================-->
+        <section class="experience" id="experience">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section__title">Professional Experience</h2>
+                    <p class="section__subtitle">My journey in data science, engineering, and leadership</p>
+                </div>
+
+                <div class="experience-wrapper">
+                    <div class="experience-timeline">
+                        <div class="timeline-line"></div>
+
+                        <!-- Experience Item 1 -->
+                        <div class="experience-item" data-aos="fade-right">
+                            <div class="experience-marker">
+                                <div class="marker-dot"></div>
+                                <div class="marker-pulse"></div>
+                            </div>
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <div class="experience-icon">
+                                        <i class="bi bi-mortarboard-fill"></i>
+                                    </div>
+                                    <div class="experience-title-group">
+                                        <h3 class="experience-title">Teaching Assistant - Year 1 & 2</h3>
+                                        <h4 class="experience-company">
+                                            <i class="bi bi-building"></i>
+                                            Royal University of Phnom Penh
+                                        </h4>
+                                    </div>
+                                    <span class="experience-date">
+                                        <i class="bi bi-calendar-check"></i>
+                                        Apr 2025 - Present
+                                    </span>
+                                </div>
+                                <div class="experience-body">
+                                    <ul class="experience-description">
+                                        <li>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            <span>Assisted in teaching SQL, Python programming, and data science fundamentals to 50+ students</span>
+                                        </li>
+                                        <li>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            <span>Supported labs, assignments, and student projects with hands-on guidance</span>
+                                        </li>
+                                        <li>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            <span>Mentored students in data analysis and programming concepts, improving pass rates</span>
+                                        </li>
+                                    </ul>
+                                    <div class="experience-tags">
+                                        <span class="exp-tag"><i class="bi bi-code"></i> Python</span>
+                                        <span class="exp-tag"><i class="bi bi-database"></i> SQL</span>
+                                        <span class="exp-tag"><i class="bi bi-people"></i> Teaching</span>
+                                        <span class="exp-tag"><i class="bi bi-book"></i> Mentoring</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience Item 2 -->
+                        <div class="experience-item" data-aos="fade-left">
+                            <div class="experience-marker">
+                                <div class="marker-dot"></div>
+                                <div class="marker-pulse"></div>
+                            </div>
+                            <div class="experience-card featured">
+                                <div class="featured-badge">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>Key Role</span>
+                                </div>
+                                <div class="experience-header">
+                                    <div class="experience-icon">
+                                        <i class="bi bi-gear-wide-connected"></i>
+                                    </div>
+                                    <div class="experience-title-group">
+                                        <h3 class="experience-title">Data Engineer</h3>
+                                        <h4 class="experience-company">
+                                            <i class="bi bi-building"></i>
+                                            COPAI AI Innovation Lab
+                                        </h4>
+                                    </div>
+                                    <span class="experience-date">
+                                        <i class="bi bi-calendar-check"></i>
+                                        Mar 2025 - Jul 2025
+                                    </span>
+                                </div>
+                                <div class="experience-body">
+                                    <ul class="experience-description">
+                                        <li>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            <span>Collected and cleaned large volumes of Cambodian-language data through advanced web scraping techniques</span>
+                                        </li>
+                                        <li>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            <span>Organized raw data into a unified knowledge base for RAG (Retrieval-Augmented Generation) model development</span>
+                                        </li>
+                                        <li>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            <span>Prepared and validated text data for Khmer-focused AI chatbot training, ensuring high data quality</span>
+                                        </li>
+                                        <li>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            <span>Collaborated with researchers to ensure data quality and scalability on HPC (High-Performance Computing) platform</span>
+                                        </li>
+                                    </ul>
+                                    <div class="experience-tags">
+                                        <span class="exp-tag"><i class="bi bi-code-slash"></i> Web Scraping</span>
+                                        <span class="exp-tag"><i class="bi bi-gear"></i> Data Engineering</span>
+                                        <span class="exp-tag"><i class="bi bi-cpu"></i> AI/ML</span>
+                                        <span class="exp-tag"><i class="bi bi-chat-dots"></i> NLP</span>
+                                        <span class="exp-tag"><i class="bi bi-translate"></i> RAG</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience Item 3 -->
+                        <div class="experience-item" data-aos="fade-right">
+                            <div class="experience-marker">
+                                <div class="marker-dot"></div>
+                                <div class="marker-pulse"></div>
+                            </div>
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <div class="experience-icon">
+                                        <i class="bi bi-calendar-event"></i>
+                                    </div>
+                                    <div class="experience-title-group">
+                                        <h3 class="experience-title">Event Organizer</h3>
+                                        <h4 class="experience-company">
+                                            <i class="bi bi-building"></i>
+                                            Cambojob Campus Career Fair
+                                        </h4>
+                                    </div>
+                                    <span class="experience-date">
+                                        <i class="bi bi-calendar-check"></i>
+                                        2023
+                                    </span>
+                                </div>
+                                <div class="experience-body">
+                                    <ul class="experience-description">
+                                        <li>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            <span>Designed and managed social media posts to attract participants and industry partners</span>
+                                        </li>
+                                        <li>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            <span>Optimized digital marketing strategies to boost online registration and event attendance</span>
+                                        </li>
+                                    </ul>
+                                    <div class="experience-tags">
+                                        <span class="exp-tag"><i class="bi bi-megaphone"></i> Marketing</span>
+                                        <span class="exp-tag"><i class="bi bi-calendar2-event"></i> Event Management</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience Item 4 -->
+                        <div class="experience-item" data-aos="fade-left">
+                            <div class="experience-marker">
+                                <div class="marker-dot"></div>
+                                <div class="marker-pulse"></div>
+                            </div>
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <div class="experience-icon">
+                                        <i class="bi bi-person-badge"></i>
+                                    </div>
+                                    <div class="experience-title-group">
+                                        <h3 class="experience-title">Admin - Student Ambassador</h3>
+                                        <h4 class="experience-company">
+                                            <i class="bi bi-building"></i>
+                                            Faculty of Engineering - RUPP
+                                        </h4>
+                                    </div>
+                                    <span class="experience-date">
+                                        <i class="bi bi-calendar-check"></i>
+                                        2023
+                                    </span>
+                                </div>
+                                <div class="experience-body">
+                                    <ul class="experience-description">
+                                        <li>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            <span>Managed social media content creation to promote events and campus campaigns</span>
+                                        </li>
+                                        <li>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            <span>Applied SEO techniques to increase visibility and engagement across digital platforms</span>
+                                        </li>
+                                    </ul>
+                                    <div class="experience-tags">
+                                        <span class="exp-tag"><i class="bi bi-share"></i> Social Media</span>
+                                        <span class="exp-tag"><i class="bi bi-search"></i> SEO</span>
+                                        <span class="exp-tag"><i class="bi bi-people"></i> Leadership</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== EDUCATION ====================-->
         <section id="projects" class="projects-section">
             <h2 class="section__title">Project</h2>
             <div id="project1" class="project-slide active">
@@ -342,34 +690,161 @@
             </div>
           </section>
 
-          <!-- Expertise Section -->
-        <section id="expertise" class="expertise section">
-            <!-- <h2 class="section__title">Expertise</h2> -->
+          <!-- Hard Skills Section -->
+        <section id="hard-skills" class="hard-skills section">
             <div class="container">
-              <div class="expertise-header">
-                <!-- <i class="bi bi-gear icon"></i> -->
-                <h2 class="section__title">Expertise</h2>
+              <div class="skills-header">
+                <h2 class="section__title">Hard Skills</h2>
               </div>
-              <ul class="expertise-list">
-                <li><strong>Data Analysis:</strong> Excel, SQL, Jupyter Notebooks, Python (Pandas, NumPy, Matplotlib)</li>
-                <!-- <li><strong>Machine Learning:</strong> Scikit-learn, TensorFlow</li> -->
-                <li><strong>Computer Vision:</strong> OpenCV, dlib</li>
-                <li><strong>Web Development:</strong> Django, React.js, HTML/CSS, JavaScript</li>
-              </ul>
+              <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                  <h3><i class="bi bi-code-square"></i> Programming Languages</h3>
+                  <ul class="skill-tags">
+                    <li><span class="tag">Python</span></li>
+                    <li><span class="tag">SQL</span></li>
+                  </ul>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                  <h3><i class="bi bi-layers"></i> Frameworks</h3>
+                  <ul class="skill-tags">
+                    <li><span class="tag">Django</span></li>
+                    <li><span class="tag">TensorFlow</span></li>
+                    <li><span class="tag">NumPy</span></li>
+                    <li><span class="tag">Pandas</span></li>
+                    <li><span class="tag">Matplotlib</span></li>
+                    <li><span class="tag">Scikit-learn</span></li>
+                  </ul>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                  <h3><i class="bi bi-database"></i> Databases</h3>
+                  <ul class="skill-tags">
+                    <li><span class="tag">PostgreSQL</span></li>
+                    <li><span class="tag">MySQL</span></li>
+                  </ul>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                  <h3><i class="bi bi-tools"></i> Tools</h3>
+                  <ul class="skill-tags">
+                    <li><span class="tag">Git</span></li>
+                    <li><span class="tag">GitHub</span></li>
+                    <li><span class="tag">Docker</span></li>
+                    <li><span class="tag">Power BI</span></li>
+                    <li><span class="tag">VS Code</span></li>
+                    <li><span class="tag">Windsurf</span></li>
+                    <li><span class="tag">Cursor</span></li>
+                    <li><span class="tag">Word</span></li>
+                    <li><span class="tag">Excel</span></li>
+                    <li><span class="tag">PowerPoint</span></li>
+                  </ul>
+                </div>
+              </div>
             </div>
         </section>
 
-        <section id="language" class="language section">
+        <!-- Soft Skills Section -->
+        <section id="soft-skills" class="soft-skills section light-background">
+            <div class="container">
+              <div class="skills-header">
+                <h2 class="section__title">Soft Skills</h2>
+              </div>
+              <div class="soft-skills-grid">
+                <div class="soft-skill-item" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="soft-skill-icon">
+                    <i class="bi bi-chat-dots"></i>
+                  </div>
+                  <h3>Communication</h3>
+                  <p>Effective verbal and written communication skills for team collaboration</p>
+                </div>
+                <div class="soft-skill-item" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="soft-skill-icon">
+                    <i class="bi bi-lightbulb"></i>
+                  </div>
+                  <h3>Problem-solving</h3>
+                  <p>Analytical thinking to identify and resolve complex challenges</p>
+                </div>
+                <div class="soft-skill-item" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="soft-skill-icon">
+                    <i class="bi bi-people"></i>
+                  </div>
+                  <h3>Collaboration</h3>
+                  <p>Working effectively with diverse teams to achieve common goals</p>
+                </div>
+                <div class="soft-skill-item" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="soft-skill-icon">
+                    <i class="bi bi-palette"></i>
+                  </div>
+                  <h3>Creativity</h3>
+                  <p>Innovative thinking to develop unique solutions and approaches</p>
+                </div>
+                <div class="soft-skill-item" data-aos="zoom-in" data-aos-delay="500">
+                  <div class="soft-skill-icon">
+                    <i class="bi bi-clock"></i>
+                  </div>
+                  <h3>Time Management</h3>
+                  <p>Efficiently organizing tasks and meeting deadlines consistently</p>
+                </div>
+                <div class="soft-skill-item" data-aos="zoom-in" data-aos-delay="600">
+                  <div class="soft-skill-icon">
+                    <i class="bi bi-arrow-repeat"></i>
+                  </div>
+                  <h3>Adaptability</h3>
+                  <p>Quickly adjusting to new situations and learning new technologies</p>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <!-- Languages Section -->
+        <section id="languages" class="languages section">
             <div class="container">
                 <div class="language-header">
-                    <!-- <i class="bi bi-translate icon"></i> -->
-                    <h2 class="section__title">Language</h2>
+                    <h2 class="section__title">Languages</h2>
                 </div>
-                <ul class="language-list">
-                    <li></i><strong> Khmer:</strong> Native</li>
-                    <li></i><strong> English:</strong> Intermediate</li>
-                    <li></i><strong> Programming Languages:</strong> Python, C++,SQL and JavaScript</li>
-                </ul>
+                <div class="languages-grid">
+                    <div class="language-item" data-aos="fade-right" data-aos-delay="100">
+                        <div class="language-info">
+                            <i class="bi bi-globe"></i>
+                            <h3>Khmer</h3>
+                            <p class="proficiency">Mother Tongue</p>
+                        </div>
+                        <div class="language-bar">
+                            <div class="language-progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="language-item" data-aos="fade-left" data-aos-delay="200">
+                        <div class="language-info">
+                            <i class="bi bi-translate"></i>
+                            <h3>English</h3>
+                            <p class="proficiency">Intermediate</p>
+                        </div>
+                        <div class="language-bar">
+                            <div class="language-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- References Section -->
+        <section id="references" class="references section light-background">
+            <div class="container">
+                <h2 class="section__title">References</h2>
+                <div class="references-grid">
+                    <div class="reference-card" data-aos="flip-up" data-aos-delay="100">
+                        <div class="reference-icon">
+                            <i class="bi bi-person-badge"></i>
+                        </div>
+                        <h3>Dr. Khim Chamroeun</h3>
+                        <p class="reference-position">Vice-Dean of Faculty of Engineering</p>
+                        <p class="reference-institution">Royal University of Phnom Penh</p>
+                        <div class="reference-contact">
+                            <a href="mailto:chamroeun.khim@gmail.com">
+                                <i class="bi bi-envelope"></i> chamroeun.khim@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <p class="references-note">Additional references available upon request</p>
             </div>
         </section>
 
