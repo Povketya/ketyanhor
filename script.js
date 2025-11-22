@@ -1,5 +1,5 @@
 /*=============== SHOW MENU ===============*/
-// Constantes des éléments du menu de navigation. 
+// Constantes des éléments du menu de navigation.
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
       navClose = document.getElementById('nav-close')
@@ -7,9 +7,10 @@ const navMenu = document.getElementById('nav-menu'),
 /*===== MENU SHOW =====*/
 // Valide l'existence de la constante
 if(navToggle){
-    // Ajoute la classe 'show-menu' à 'navMenu' lorsqu'on clique sur 'navToggle'.
+    // Toggle la classe 'show-menu' à 'navMenu' lorsqu'on clique sur 'navToggle'.
     navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu')
+        console.log('Burger clicked - toggling menu'); // Debug log
+        navMenu.classList.toggle('show-menu')
     })
 }
 
@@ -18,6 +19,7 @@ if(navToggle){
 if(navClose){
     // Supprime la classe 'show-menu' de 'navMenu' lorsqu'on clique sur 'navClose'.
     navClose.addEventListener('click', () =>{
+        console.log('Close clicked - hiding menu'); // Debug log
         navMenu.classList.remove('show-menu')
     })
 }
