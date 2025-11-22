@@ -11,6 +11,16 @@ if(navToggle){
     navToggle.addEventListener('click', () =>{
         console.log('Burger clicked - toggling menu'); // Debug log
         navMenu.classList.toggle('show-menu')
+
+        // Toggle burger icon
+        const icon = navToggle.querySelector('i')
+        if(navMenu.classList.contains('show-menu')){
+            icon.classList.remove('ri-menu-4-line')
+            icon.classList.add('ri-close-line')
+        } else {
+            icon.classList.remove('ri-close-line')
+            icon.classList.add('ri-menu-4-line')
+        }
     })
 }
 
@@ -21,6 +31,11 @@ if(navClose){
     navClose.addEventListener('click', () =>{
         console.log('Close clicked - hiding menu'); // Debug log
         navMenu.classList.remove('show-menu')
+
+        // Reset burger icon
+        const icon = navToggle.querySelector('i')
+        icon.classList.remove('ri-close-line')
+        icon.classList.add('ri-menu-4-line')
     })
 }
 
@@ -32,6 +47,11 @@ const linkAction = () =>{
     const navMenu = document.getElementById('nav-menu')
     // Supprime la classe 'show-menu' de 'navMenu' lorsqu'on clique sur un lien de navigation.
     navMenu.classList.remove('show-menu')
+
+    // Reset burger icon
+    const icon = navToggle.querySelector('i')
+    icon.classList.remove('ri-close-line')
+    icon.classList.add('ri-menu-4-line')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
