@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
+<<<<<<< HEAD
       "Bash(start:*)"
+=======
+      "Bash(powershell -Command \"Get-Content ''d:\\ketyanhor\\style.css'' | Measure-Object -Line\")"
+>>>>>>> df70a66 (Color)
     ],
     "deny": [],
     "ask": []
