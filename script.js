@@ -1,161 +1,225 @@
-/*=============== SHOW MENU ===============*/
-// Constantes des éléments du menu de navigation.
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+(() => {
+  "use strict";
 
-/*===== MENU SHOW =====*/
-// Valide l'existence de la constante
-if(navToggle){
-    // Toggle la classe 'show-menu' à 'navMenu' lorsqu'on clique sur 'navToggle'.
-    navToggle.addEventListener('click', () =>{
-        console.log('Burger clicked - toggling menu'); // Debug log
-        navMenu.classList.toggle('show-menu')
+  const root = document.documentElement;
+  const body = document.body;
+  const header = document.getElementById("site-header");
+  const navPanel = document.getElementById("nav-panel");
+  const navToggle = document.getElementById("nav-toggle");
+  const navLinks = [...document.querySelectorAll(".nav__link")];
+  const themeToggle = document.getElementById("theme-toggle");
+  const scrollTopButton = document.getElementById("scroll-top");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        // Toggle burger icon
-        const icon = navToggle.querySelector('i')
-        if(navMenu.classList.contains('show-menu')){
-            icon.classList.remove('ri-menu-4-line')
-            icon.classList.add('ri-close-line')
-        } else {
-            icon.classList.remove('ri-close-line')
-            icon.classList.add('ri-menu-4-line')
-        }
-    })
-}
+  const storedTheme = localStorage.getItem("portfolio-theme");
+  setTheme(storedTheme || "light");
 
-/*===== MENU HIDDEN =====*/
-// Valide l'existence de la constante
-if(navClose){
-    // Supprime la classe 'show-menu' de 'navMenu' lorsqu'on clique sur 'navClose'.
-    navClose.addEventListener('click', () =>{
-        console.log('Close clicked - hiding menu'); // Debug log
-        navMenu.classList.remove('show-menu')
+  function setTheme(theme) {
+    root.dataset.theme = theme;
+    localStorage.setItem("portfolio-theme", theme);
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    themeToggle?.setAttribute("aria-label", `Switch to ${nextTheme} theme`);
+    themeToggle?.setAttribute("title", `Switch to ${nextTheme} theme`);
+  }
 
-        // Reset burger icon
-        const icon = navToggle.querySelector('i')
-        icon.classList.remove('ri-close-line')
-        icon.classList.add('ri-menu-4-line')
-    })
-}
+  themeToggle?.addEventListener("click", () => {
+    setTheme(root.dataset.theme === "dark" ? "light" : "dark");
+  });
 
-/*=============== REMOVE MENU MOBILE ===============*/
-// Constantes qui récupèrent tous les éléments de la classe 'nav__link'.
-const navLink = document.querySelectorAll('.nav__link')
+  function closeMenu() {
+    navPanel?.classList.remove("open");
+    navToggle?.setAttribute("aria-expanded", "false");
+    navToggle?.setAttribute("aria-label", "Open navigation menu");
+    body.classList.remove("menu-open");
+  }
 
-const linkAction = () =>{
-    const navMenu = document.getElementById('nav-menu')
-    // Supprime la classe 'show-menu' de 'navMenu' lorsqu'on clique sur un lien de navigation.
-    navMenu.classList.remove('show-menu')
+  navToggle?.addEventListener("click", () => {
+    const isOpen = navPanel?.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
+    navToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+    body.classList.toggle("menu-open", Boolean(isOpen));
+  });
 
-    // Reset burger icon
-    const icon = navToggle.querySelector('i')
-    icon.classList.remove('ri-close-line')
-    icon.classList.add('ri-menu-4-line')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
+  navLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
-/*=============== CHANGE SHADOW HEADER ===============*/
-const shadowHeader = () => {
-    const header = document.getElementById('header')
-    // Ajoute ou supprime la classe 'shadow-header' à 'header' en fonction du défilement de la page.
-    this.scrollY >= 50 ? header.classList.add('shadow-header') 
-                       : header.classList.remove('shadow-header')
-}
-window.addEventListener('scroll', shadowHeader)
+  document.addEventListener("click", (event) => {
+    if (
+      navPanel?.classList.contains("open") &&
+      !navPanel.contains(event.target) &&
+      !navToggle?.contains(event.target)
+    ) {
+      closeMenu();
+    }
+  });
 
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections = document.querySelectorAll('section[id]')
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 920) closeMenu();
+  });
 
-const scrollActive = () =>{
-    const scrollDown = window.scrollY
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach((link) => {
+            const isActive = link.getAttribute("href") === `#${entry.target.id}`;
+            link.classList.toggle("active", isActive);
+            if (isActive) {
+              link.setAttribute("aria-current", "page");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+        });
+      },
+      { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
+    );
 
-	sections.forEach(current =>{
-		const sectionHeight = current.offsetHeight,
-			  sectionTop = current.offsetTop - 58,
-			  sectionId = current.getAttribute('id'),
-			  sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+    document.querySelectorAll("main > section[id]").forEach((section) => sectionObserver.observe(section));
+  }
 
-		if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
-			sectionsClass.classList.add('active-link')
-		}else{
-			sectionsClass.classList.remove('active-link')
-		}                                                    
-	})
-}
-window.addEventListener('scroll', scrollActive)
+  const revealElements = [...document.querySelectorAll(".reveal")];
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    root.classList.add("motion-ready");
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        rootMargin: "0px 0px -48px",
+        threshold: 0.08,
+      }
+    );
 
+    requestAnimationFrame(() => {
+      revealElements.forEach((element) => revealObserver.observe(element));
+    });
+  } else {
+    revealElements.forEach((element) => element.classList.add("visible"));
+  }
 
+  function updateScrollUi() {
+    const isScrolled = window.scrollY > 24;
+    header?.classList.toggle("scrolled", isScrolled);
+    scrollTopButton?.classList.toggle("visible", window.scrollY > 620);
+  }
 
+  updateScrollUi();
+  window.addEventListener("scroll", updateScrollUi, { passive: true });
 
-const slides = document.querySelectorAll('.project-slide');
-const nextBtn = document.querySelector('.next');
-const prevBtn = document.querySelector('.prev');
-let currentSlide = 0;
-let isAnimating = false;
+  scrollTopButton?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  });
 
-function showSlide(index) {
-    if (isAnimating) return;
-    isAnimating = true;
+  const projectCards = [...document.querySelectorAll(".project-card")];
+  const filterButtons = [...document.querySelectorAll(".filter-button")];
+  const searchInput = document.getElementById("project-search");
+  const resultsText = document.getElementById("project-results");
+  const viewAllButton = document.getElementById("view-all-projects");
+  let activeFilter = "all";
+  let showAll = false;
 
-    const outgoingSlide = slides[currentSlide];
-    const incomingSlide = slides[index];
+  function filterProjects() {
+    const query = searchInput?.value.trim().toLowerCase() || "";
+    let visibleCount = 0;
+    let matchingCount = 0;
 
-    // Resetting the transition state for incoming slide
-    incomingSlide.style.transition = 'none';
-    incomingSlide.style.opacity = '0';
-    incomingSlide.style.transform = index > currentSlide ? 'translateX(100%)' : 'translateX(-100%)';
-    incomingSlide.style.display = 'flex';
+    projectCards.forEach((card) => {
+      const categories = card.dataset.category.split(",");
+      const matchesFilter = activeFilter === "all" || categories.includes(activeFilter);
+      const matchesSearch = !query || card.dataset.keywords.includes(query) || card.textContent.toLowerCase().includes(query);
+      const matches = matchesFilter && matchesSearch;
+      const isCollapsedExtra = card.dataset.extra === "true" && !showAll && activeFilter === "all" && !query;
+      const isVisible = matches && !isCollapsedExtra;
 
-    // Triggering reflow to apply the initial state immediately
-    incomingSlide.offsetHeight; 
+      if (matches) matchingCount += 1;
+      if (isVisible) visibleCount += 1;
+      card.hidden = !isVisible;
+    });
 
-    // Slide out the current slide
-    outgoingSlide.style.transition = 'transform 0.8s ease, opacity 0.8s ease';
-    outgoingSlide.style.transform = index > currentSlide ? 'translateX(-100%)' : 'translateX(100%)';
-    outgoingSlide.style.opacity = '0';
+    if (resultsText) {
+      resultsText.textContent = `Showing ${visibleCount} of ${projectCards.length} projects`;
+    }
 
-    // Slide in the new slide
-    incomingSlide.style.transition = 'transform 0.8s ease, opacity 0.8s ease';
-    setTimeout(() => {
-        incomingSlide.style.transform = 'translateX(0)';
-        incomingSlide.style.opacity = '1';
-    }, 50);
+    const canToggleAll = activeFilter === "all" && !query && matchingCount > visibleCount;
+    const shouldShowCollapse = activeFilter === "all" && !query && showAll;
+    if (viewAllButton) {
+      viewAllButton.parentElement.hidden = !(canToggleAll || shouldShowCollapse);
+      viewAllButton.setAttribute("aria-expanded", String(showAll));
+      viewAllButton.firstChild.textContent = showAll ? "Show Featured Projects " : "View All Projects ";
+    }
+  }
 
-    // After the transition is done, clean up
-    setTimeout(() => {
-        outgoingSlide.classList.remove('active');
-        outgoingSlide.style.display = 'none';
-        incomingSlide.classList.add('active');
-        isAnimating = false;
-    }, 850);
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeFilter = button.dataset.filter;
+      filterButtons.forEach((item) => {
+        const isActive = item === button;
+        item.classList.toggle("active", isActive);
+        item.setAttribute("aria-pressed", String(isActive));
+      });
+      filterProjects();
+    });
+  });
 
-    currentSlide = index;
-}
+  searchInput?.addEventListener("input", filterProjects);
 
-nextBtn.addEventListener('click', () => {
-    const nextSlide = (currentSlide + 1) % slides.length;
-    showSlide(nextSlide);
-});
+  viewAllButton?.addEventListener("click", () => {
+    showAll = !showAll;
+    filterProjects();
+    if (!showAll) {
+      document.getElementById("projects")?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+    }
+  });
 
-prevBtn.addEventListener('click', () => {
-    const prevSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(prevSlide);
-});
+  filterProjects();
 
-// Initialize the first slide
-slides.forEach((slide, index) => {
-    slide.style.display = index === currentSlide ? 'flex' : 'none';
-});
+  const dialogs = [...document.querySelectorAll(".project-dialog")];
+  document.querySelectorAll(".dialog-trigger").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const dialog = document.getElementById(trigger.dataset.dialog);
+      if (!dialog) return;
+      dialog.showModal();
+      body.classList.add("dialog-open");
+    });
+  });
 
-// Auto-scroll to the next project every 4 seconds
-setInterval(() => {
-    const nextSlide = (currentSlide + 1) % slides.length;
-    showSlide(nextSlide);
-}, 4000);  // 4000ms = 4 seconds
+  dialogs.forEach((dialog) => {
+    dialog.querySelector(".dialog-close")?.addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => {
+      const rect = dialog.getBoundingClientRect();
+      const isOutside =
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom;
+      if (isOutside) dialog.close();
+    });
+    dialog.addEventListener("close", () => body.classList.remove("dialog-open"));
+  });
 
-document.querySelectorAll('.circular-progress').forEach(function (progress) {
-    let value = progress.getAttribute('data-progress');
-    progress.style.setProperty('--progress', value);
-});
+  const contactForm = document.getElementById("contact-form");
+  const formStatus = document.getElementById("form-status");
+  contactForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!contactForm.reportValidity()) return;
 
+    const formData = new FormData(contactForm);
+    const name = formData.get("name").trim();
+    const email = formData.get("email").trim();
+    const subject = formData.get("subject").trim();
+    const message = formData.get("message").trim();
+    const bodyText = `Hello Povketya NHOR,\n\n${message}\n\nFrom: ${name}\nEmail: ${email}`;
+    const mailto = `mailto:povketya09@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+
+    if (formStatus) formStatus.textContent = "Opening your email application…";
+    window.location.href = mailto;
+  });
+
+  const year = document.getElementById("current-year");
+  if (year) year.textContent = String(new Date().getFullYear());
+})();

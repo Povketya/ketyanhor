@@ -1,0 +1,16 @@
+{
+  "name": "Povketya NHOR — Data Portfolio",
+  "short_name": "Povketya NHOR",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f9fc",
+  "theme_color": "#0d1b2a",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
